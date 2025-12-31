@@ -370,6 +370,11 @@ app.delete('/api/paginas/:id', authenticateToken, (req, res) => {
     });
 });
 
+ // Health check endpoint simple para Railway
+ app.get('/health', (req, res) => {
+     res.status(200).send('OK');
+ });
+
 // Servir archivos estáticos del frontend
 app.use(express.static(path.join(__dirname, 'client/build')));
 
@@ -383,11 +388,6 @@ const fs = require('fs');
 if (!fs.existsSync('uploads')) {
     fs.mkdirSync('uploads');
 }
-
-// Health check endpoint simple para Railway
-app.get('/health', (req, res) => {
-    res.status(200).send('OK');
-});
 
 // Iniciar servidor
 const server = app.listen(PORT, '0.0.0.0', () => {
