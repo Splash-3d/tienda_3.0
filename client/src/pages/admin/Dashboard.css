@@ -204,7 +204,60 @@
   color: var(--text-secondary);
 }
 
-/* Responsive */
+/* Iconos de dashboard */
+.dashboard-header::before {
+  content: '📊';
+  margin-right: 12px;
+  font-size: 28px;
+}
+
+.stats-grid .stat-card:nth-child(1)::before {
+  content: '📦';
+  display: block;
+  font-size: 32px;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.stats-grid .stat-card:nth-child(2)::before {
+  content: '📄';
+  display: block;
+  font-size: 32px;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.stats-grid .stat-card:nth-child(3)::before {
+  content: '🏷';
+  display: block;
+  font-size: 32px;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.stats-grid .stat-card:nth-child(4)::before {
+  content: '👤';
+  display: block;
+  font-size: 32px;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+/* Iconos de acciones rápidas */
+.quick-actions .btn:nth-child(1)::before {
+  content: '+';
+  margin-right: 8px;
+}
+
+.quick-actions .btn:nth-child(2)::before {
+  content: '📄';
+  margin-right: 8px;
+}
+
+.quick-actions .btn:nth-child(3)::before {
+  content: '🏷';
+  margin-right: 8px;
+}
 @media (max-width: 768px) {
   .dashboard-header {
     margin-bottom: 32px;

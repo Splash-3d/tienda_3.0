@@ -209,7 +209,93 @@
   border-top: 1px solid var(--border-color);
 }
 
-/* Responsive */
+.btn-primary::before {
+  content: '+';
+  margin-right: 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.btn-add::before {
+  content: '+';
+  margin-right: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-edit::before {
+  content: '✏';
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.btn-delete::before {
+  content: '🗑';
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.btn-view::before {
+  content: '👁';
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+/* Iconos de estado */
+.status.active::before {
+  content: '✓';
+  margin-right: 4px;
+  color: var(--success-color);
+}
+
+.status.inactive::before {
+  content: '✗';
+  margin-right: 4px;
+  color: var(--error-color);
+}
+
+/* Iconos de tabla */
+.category-name::before {
+  content: '🏷';
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.slug-cell::before {
+  content: '🔗';
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+/* Iconos de formulario */
+.form-label.required::after {
+  content: ' *';
+  color: var(--error-color);
+}
+
+/* Iconos de navegación */
+.page-header::before {
+  content: '🏷';
+  margin-right: 12px;
+  font-size: 24px;
+}
+
+.modal-header h2::before {
+  content: '📝';
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+/* Iconos de acciones rápidas */
+.actions .btn-small:first-child::before {
+  content: '👁';
+  margin-right: 4px;
+}
+
+.actions .btn-small:last-child::before {
+  content: '🗑';
+  margin-right: 4px;
+}
 @media (max-width: 768px) {
   .page-header {
     flex-direction: column;
