@@ -1,67 +1,69 @@
+/* ===== NAVBAR - INSPIRACIÓN NIKE ===== */
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: var(--border-sm) solid var(--color-gray-200);
   z-index: 1000;
-  transition: var(--transition);
+  transition: all var(--transition-fast);
 }
 
 .navbar-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
-  gap: 32px;
+  height: 80px;
+  gap: var(--spacing-xl);
 }
 
 .navbar-logo {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-black);
   text-decoration: none;
   letter-spacing: -0.5px;
-  transition: var(--transition);
+  transition: color var(--transition-fast);
 }
 
 .navbar-logo:hover {
-  color: var(--primary-color);
+  color: var(--color-gray-700);
 }
 
 .navbar-menu {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: var(--spacing-lg);
   flex: 1;
 }
 
 .navbar-link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: var(--border-radius);
-  color: var(--text-secondary);
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  color: var(--color-gray-700);
   text-decoration: none;
   font-weight: 500;
-  font-size: 16px;
-  transition: var(--transition);
+  font-size: 14px;
+  transition: all var(--transition-fast);
   border: none;
   background: none;
   cursor: pointer;
 }
 
 .navbar-link:hover {
-  color: var(--text-primary);
-  background-color: var(--surface-color);
+  color: var(--color-black);
+  background: var(--color-gray-50);
 }
 
 .navbar-link.active {
-  color: var(--primary-color);
-  background-color: rgba(0, 113, 227, 0.1);
+  color: var(--color-black);
+  background: var(--color-gray-100);
 }
 
 .navbar-dropdown {
@@ -71,12 +73,12 @@
 .dropdown-toggle {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--spacing-xs);
 }
 
 .dropdown-arrow {
-  font-size: 12px;
-  transition: transform 0.3s ease;
+  font-size: 10px;
+  transition: transform var(--transition-fast);
 }
 
 .dropdown-arrow.open {
@@ -88,13 +90,13 @@
   top: 100%;
   left: 0;
   min-width: 200px;
-  background-color: var(--background-color);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-large);
+  background: var(--color-white);
+  border: var(--border-sm) solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  margin-top: 8px;
+  margin-top: var(--spacing-sm);
   overflow: hidden;
-  animation: slideDown 0.3s ease;
+  animation: slideDown var(--transition-normal) ease;
 }
 
 @keyframes slideDown {
@@ -110,13 +112,13 @@
 
 .dropdown-item {
   display: block;
-  padding: 12px 20px;
-  color: var(--text-primary);
+  padding: var(--spacing-md) var(--spacing-lg);
+  color: var(--color-gray-900);
   text-decoration: none;
   font-weight: 500;
-  font-size: 15px;
-  transition: var(--transition);
-  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+  transition: all var(--transition-fast);
+  border-bottom: var(--border-sm) solid var(--color-gray-100);
 }
 
 .dropdown-item:last-child {
@@ -124,8 +126,8 @@
 }
 
 .dropdown-item:hover {
-  background-color: var(--surface-color);
-  color: var(--primary-color);
+  background: var(--color-gray-50);
+  color: var(--color-black);
 }
 
 .navbar-cart {
@@ -133,68 +135,69 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--border-radius);
-  color: var(--text-secondary);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  color: var(--color-gray-700);
   text-decoration: none;
-  transition: var(--transition);
+  transition: all var(--transition-fast);
 }
 
 .navbar-cart:hover {
-  color: var(--primary-color);
-  background-color: var(--surface-color);
+  color: var(--color-black);
+  background: var(--color-gray-50);
 }
 
 .cart-badge {
   position: absolute;
-  top: -4px;
-  right: -4px;
-  background-color: var(--primary-color);
-  color: white;
-  font-size: 11px;
+  top: -2px;
+  right: -2px;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-size: 10px;
   font-weight: 600;
   padding: 2px 6px;
-  border-radius: 10px;
-  min-width: 18px;
+  border-radius: var(--radius-full);
+  min-width: 16px;
   text-align: center;
   line-height: 1;
+}
+
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-black);
+  transition: all var(--transition-fast);
+}
+
+.mobile-menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .navbar-content {
-    height: 64px;
-    gap: 16px;
-  }
-  
-  .navbar-logo {
-    font-size: 20px;
-  }
-  
-  .navbar-menu {
-    gap: 16px;
-  }
-  
-  .navbar-link {
-    padding: 6px 12px;
-    font-size: 15px;
-  }
-  
-  .dropdown-menu {
-    min-width: 160px;
-  }
-  
-  .dropdown-item {
-    padding: 10px 16px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar-content {
-    height: 60px;
-    gap: 12px;
+    height: 70px;
+    gap: var(--spacing-md);
   }
   
   .navbar-logo {
@@ -202,16 +205,74 @@
   }
   
   .navbar-menu {
-    gap: 12px;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    border-bottom: var(--border-sm) solid var(--color-gray-200);
+    flex-direction: column;
+    gap: 0;
+    padding: var(--spacing-md);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+  }
+  
+  .navbar-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
   
   .navbar-link {
-    padding: 4px 8px;
-    font-size: 14px;
+    width: 100%;
+    padding: var(--spacing-md);
+    justify-content: space-between;
+    border-radius: var(--radius-md);
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    border-radius: var(--radius-md);
+    background: var(--color-gray-50);
+  }
+  
+  .dropdown-item {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-content {
+    height: 60px;
+    gap: var(--spacing-sm);
+  }
+  
+  .navbar-logo {
+    font-size: 16px;
+  }
+  
+  .navbar-menu {
+    top: 60px;
   }
   
   .navbar-cart {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .cart-badge {
+    font-size: 9px;
+    min-width: 14px;
   }
 }
