@@ -122,7 +122,7 @@ const ProductsPage: React.FC = () => {
               <p>Intenta con otra categoría o vuelve más tarde.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-4">
+            <>
               {filteredProducts.map((product) => (
                 <div key={product.id} className="card product-card">
                   <Link to={`/producto/${product.id}`} className="product-link">
@@ -144,22 +144,24 @@ const ProductsPage: React.FC = () => {
                         </div>
                       )}
                     </div>
-                    
+
                     <div className="product-info">
-                      <div className="product-categories">
-                        {product.categorias.map((cat, index) => (
-                          <span key={index} className="chip">
-                            {cat}
-                          </span>
-                        ))}
+                      <div className="product-details-section">
+                        <div className="product-categories">
+                          {product.categorias.map((cat, index) => (
+                            <span key={index} className="chip">
+                              {cat}
+                            </span>
+                          ))}
+                        </div>
+
+                        <h3 className="product-name">{product.nombre}</h3>
+
+                        {product.descripcion_corta && (
+                          <p className="product-description">{product.descripcion_corta}</p>
+                        )}
                       </div>
-                      
-                      <h3 className="product-name">{product.nombre}</h3>
-                      
-                      {product.descripcion_corta && (
-                        <p className="product-description">{product.descripcion_corta}</p>
-                      )}
-                      
+
                       <div className="product-footer">
                         <div className="price-section">
                           <span className="product-price">${product.precio.toFixed(2)}</span>
@@ -167,23 +169,13 @@ const ProductsPage: React.FC = () => {
                             <span className="price-badge">Popular</span>
                           )}
                         </div>
-                        <button
-                          className="btn btn-primary btn-small"
-                          onClick={(e) => handleAddToCart(e, product)}
-                        >
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <circle cx="9" cy="21" r="1"/>
-                            <circle cx="20" cy="21" r="1"/>
-                            <path d="M1,1h4l2.68,13.39a2,2,0,0,0,2,1.61h9.72a2,2,0,0,0,2-1.61L23,6H6"/>
-                          </svg>
-                          Añadir
-                        </button>
+                        <span className="btn btn-primary btn-small">Ver más</span>
                       </div>
                     </div>
                   </Link>
                 </div>
               ))}
-            </div>
+            </>
           )}
         </div>
       </div>
