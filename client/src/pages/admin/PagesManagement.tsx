@@ -253,7 +253,6 @@ const PagesManagement: React.FC = () => {
                     value={formData.slug}
                     onChange={(e) => setFormData({...formData, slug: e.target.value.replace(/[^a-z0-9-]/g, '')})}
                     required
-                    pattern="^[a-z0-9-]+$"
                     title="Solo letras minúsculas, números y guiones"
                   />
                   <small className="form-help">
