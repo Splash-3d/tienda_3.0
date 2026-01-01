@@ -155,7 +155,7 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  height: 500px; /* Altura fija para cards horizontales */
+  height: 100%; /* Eliminada altura fija para que se adapte al contenido */
   position: relative;
 }
 
@@ -189,9 +189,9 @@
   color: inherit;
 }
 
-/* Imagen grande - 60% de altura (300px) */
+/* Imagen grande - Parte 1 de 3 (16:9 aspect ratio) */
 .product-image {
-  height: 300px; /* Altura fija grande */
+  aspect-ratio: 16/9; /* Restablecido a 16:9 como solicitaste */
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   display: flex;
   align-items: center;
@@ -280,15 +280,19 @@
   font-size: 3rem;
 }
 
-/* Información del producto - 40% de altura (200px) */
+/* Información del producto - Parte 2 de 3 (nombre y descripción) */
 .product-info {
   padding: var(--spacing-lg);
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 100%);
-  min-height: 200px; /* Altura mínima para la info */
+}
+
+.product-details-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-categories {
@@ -368,10 +372,10 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-sm);
-  margin-top: auto;
   flex-shrink: 0;
   padding-top: var(--spacing-sm);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
+  margin-top: var(--spacing-sm);
 }
 
 .price-section {
@@ -503,14 +507,6 @@
     gap: var(--spacing-lg);
   }
   
-  .product-card {
-    height: 450px; /* Altura ajustada para tablet */
-  }
-  
-  .product-image {
-    height: 270px; /* 60% de 450px */
-  }
-  
   .products-title {
     font-size: 3rem;
   }
@@ -551,14 +547,6 @@
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
-  }
-  
-  .product-card {
-    height: 400px; /* Altura ajustada para móvil */
-  }
-  
-  .product-image {
-    height: 240px; /* 60% de 400px */
   }
   
   .product-info {
@@ -646,14 +634,6 @@
   .products-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
-  }
-  
-  .product-card {
-    height: 350px; /* Altura ajustada para móvil pequeño */
-  }
-  
-  .product-image {
-    height: 210px; /* 60% de 350px */
   }
   
   .product-info {
